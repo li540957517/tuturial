@@ -12,6 +12,7 @@ class FeedbackForm(forms.Form):
                               help_text='问题标题', widget=forms.TextInput(attrs={'class': 'form-control'}))
     category = forms.ChoiceField(label='分类', choices=Feedback.CATEGORIES,
                                  widget=forms.Select(attrs={'class': 'form-control'}))
+    username = forms.CharField(label='姓名',widget=forms.TextInput(attrs={'class':'form-control'}))
     email = forms.EmailField(label='邮箱', widget=forms.TextInput(attrs={'class': 'form-control'}))
     screenshot = forms.FileField(label='问题截图', required=False)
     description = forms.CharField(label='问题描述', widget=forms.Textarea(attrs={'class': 'form-control'}))

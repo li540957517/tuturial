@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c569075f-9b5b-484a-acc0-381d8609ca8c" name="https://github.com/li540957517/tuturial" url="https://github.com/li540957517">
+        <fileTransfer host="https://github.com/li540957517" port="21" rootFolder="/tuturial">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

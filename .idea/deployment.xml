@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="https://github.com/li540957517/tuturial" uploadOnCheckin="c569075f-9b5b-484a-acc0-381d8609ca8c">
+    <serverData>
+      <paths name="https://github.com/li540957517/tuturial">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="https://github.com/li540957517/tuturial" />
+  </component>
+</project>
