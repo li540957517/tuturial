@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+</head>
+<body>
+    <table border="1" cellpadding="5">
+        <tr>
+            <td></td>
+            <td>过滤器</td>
+        </tr>
+        <tr>
+            <td>add</td>
+            <td>{{ course.price|add:2 }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                {{ course.title|capfirst }}<br>
+                {{ course.title|upper |lower}}<br>
+                {{ course.title|title}}<br>
+            </td>
+        </tr>
+        <tr>
+            <td>日期时间</td>
+            <td>
+                {{ course.pubdate |date:'Y m d H : i'}}<br>
+                {{ course.pubdate |time:'H:i'}}<br>
+            </td>
+        </tr>
+        <tr>
+            <td>默认值</td>
+            <td>
+                {{ var2|default:'未填写' }}
+            </td>
+        </tr>
+        <tr>
+            <td>文件格式</td>
+            <td>{{ 2323153456|filesizeformat }}</td>
+        </tr>
+        <tr>
+            <td>浮点</td>
+            <td>{{ 3.1415926|floatformat:3 }}</td>
+        </tr>
+        <tr>
+            <td>长度</td>
+            <td>
+                {{ students|length }}<br>
+                {{ students|length_is:'2' }}<br>
+            </td>
+        </tr>
+        <tr>
+            <td>首位/末位/随机</td>
+            <td>
+                {{ students|first }}<br>
+                {{ students|last }}<br>
+                {{ students|random }}<br>
+            </td>
+        </tr>
+        <tr>
+            <td>序列连接</td>
+            <td>{{ students|join:'-' }}</td>
+        </tr>
+        <tr>
+            <td>是否</td>
+            <td>
+                {{ True|yesno:'是,否' }}<br>
+                {{ False|yesno:'是,否' }}<br>
+                {{ None|yesno:'是,否,未知' }}<br>
+            </td>
+        </tr>
+        <tr>
+            <td>截断</td>
+            <td>
+                {{ lorem|truncatechars:10 }}<br>
+                {{ lorem|truncatewords:5 }}<br>
+                {{ lorem_html|truncatewords_html:5}}<br>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

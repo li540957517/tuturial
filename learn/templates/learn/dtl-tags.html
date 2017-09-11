@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签</title>
+</head>
+<body>
+<table border="1" cellpadding="5">
+    <tr>
+        <td></td>
+        <td>模板语言 标签</td>
+    </tr>
+    <tr>
+        <td>变量 自动编码</td>
+        <td>{{ input }}</td>
+    </tr>
+    <tr>
+        <td>关闭自动编码</td>
+        <td>
+            {% autoescape off %}
+                {{ input }}</td>
+            {% endautoescape %}
+    </tr>
+    <tr>
+        <td>学生</td>
+        <td>
+            <ul>
+                {% for student in students %}
+                    <li class="{% cycle  's1' 's2' %}">{{ forloop.counter }} {{ student }}</li>
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>循环课程</td>
+        <td>
+            {% for k,v in course.items %}
+                <li>{{ k }} -> {{ v }}</li>
+            {% endfor %}
+        </td>
+    </tr>
+    <tr>
+        <td>条件判断</td>
+        <td>
+            {% if students.0 == 'Tom' %}
+                第一位学生是Tom
+                {% else %}
+                不是
+            {% endif %}
+        </td>
+    </tr>
+</table>
+</body>
+</html>
