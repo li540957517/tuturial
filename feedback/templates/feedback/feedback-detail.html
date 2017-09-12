@@ -1,0 +1,51 @@
+{% extends 'feedback/base.html' %}
+{% block main_content %}
+    <table class="table table-bordered">
+        <tr>
+            <td>编号</td>
+            <td>{{ item.id }}</td>
+        </tr>
+        <tr>
+            <td>主题</td>
+            <td>{{ item.subject }}</td>
+        </tr>
+        <tr>
+            <td>分类</td>
+            <td>{{ item.category }}</td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td>{{ item.username }}</td>
+        </tr>
+        <tr>
+            <td>邮箱</td>
+            <td>{{ item.email }}</td>
+        </tr>
+        <tr>
+            <td>问题截图</td>
+            <td>{{ item.screenshot }}</td>
+        </tr>
+        <tr>
+            <td>问题描述</td>
+            <td>{{ item.description }}</td>
+        </tr>
+        <tr>
+            <td>资讯订阅</td>
+            <td>{{ item.subscription|yesno:'已订阅,未订阅' }}</td>
+        </tr>
+        <tr>
+            <td>处理状态</td>
+            <td>{{ item.status }}</td>
+        </tr>
+        <tr>
+            <td>发布时间</td>
+            <td>{{ item.posted_time }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <a href="{% url 'feedback:feedback_list' %}" class="btn btn-default">返回列表</a>
+            </td>
+        </tr>
+    </table>
+{% endblock %}
