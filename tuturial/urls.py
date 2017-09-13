@@ -19,6 +19,7 @@ from . import views
 
 urlpatterns = [
     url(r'learn/',include('learn.urls')),
+    url(r'state/',include('state.urls')),
     url(r'^hello/', include('hello.urls')),
     url(r'^feedback/', include('feedback.urls')),
     url(r'^tutor/$', view=views.tutor, name='tutor'),
