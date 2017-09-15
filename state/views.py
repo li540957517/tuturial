@@ -26,3 +26,22 @@ def delete_cookie(request):
         rsp = HttpResponse()
         rsp.delete_cookie('language')
         return rsp
+
+
+def set_session(request):
+    """设置Session"""
+    request.session['course'] = 'Python Django'
+    request.session.set_expiry(0)  # 单位为秒，如果为0表示和浏览器生命周期相同
+    return HttpResponse('写入Session["course"]')
+
+
+def get_session(request):
+    """读取Session"""
+    course = request.session.get('course', None)
+    return HttpResponse(course if course else '未找到')
+
+
+def clear_session(request):
+    """删除Session"""
+    request.session.flush()
+    return HttpResponse('Session清除完毕！')

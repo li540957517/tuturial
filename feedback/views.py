@@ -53,9 +53,12 @@ def upload_file(f):
 
 def feedback_list(request):
     """信息列表页"""
-    q = request.GET.get('q', '')
-    items = Feedback.objects.all().filter(subject__contains=q).order_by('-posted_time')
-    return render(request, 'feedback/feedback-list.html', {'items': items})
+    if 'admin' in request.session:
+        q = request.GET.get('q', '')
+        items = Feedback.objects.all().filter(subject__contains=q).order_by('-posted_time')
+        return render(request, 'feedback/feedback-list.html', {'items': items})
+    else:
+        return redirect(reverse('feedback:login'))
 
 
 def feedback_detail(request, fid):
@@ -95,3 +98,21 @@ def feedback_delete(request, fid):
     f = get_object_or_404(Feedback, pk=fid)
     f.delete()
     return redirect(reverse('feedback:feedback_list'))
+
+
+def login(request):
+    """管理员登录"""
+    if request.method == 'POST':
+        username = request.POST.get('username', None)
+        pwd = request.POST.get('pwd', None)
+        if username == 'Tom' and pwd == '123456':
+            request.session['admin'] = username
+            return redirect(reverse('feedback:feedback_list'))
+        else:
+            return redirect(reverse('feedback:login'))
+    return render(request, 'feedback/login.html')
+
+
+def logout(request):
+    """退出登录"""
+    pass
