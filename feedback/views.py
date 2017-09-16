@@ -115,4 +115,6 @@ def login(request):
 
 def logout(request):
     """退出登录"""
-    pass
+    if 'admin' in request.session:
+        request.session.flush()
+    return redirect(reverse('feedback:login'))
